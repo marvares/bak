@@ -1,0 +1,22 @@
+# vim: filetype=neomuttrc
+# muttrc file for account martin@martinvargas.org.pe
+set realname = "Martín Vargas Estrada"
+set from = "martin@martinvargas.org.pe"
+set sendmail = "msmtp -a martin@martinvargas.org.pe"
+alias me Martín Vargas Estrada <martin@martinvargas.org.pe>
+set folder = "/home/matti/.local/share/mail/martin@martinvargas.org.pe"
+set header_cache = /home/matti/.cache/mutt-wizard/martin@martinvargas.org.pe/headers
+set message_cachedir = /home/matti/.cache/mutt-wizard/martin@martinvargas.org.pe/bodies
+set mbox_type = Maildir
+set hostname = "martinvargas.org.pe"
+source /usr/local/share/mutt-wizard/switch.muttrc
+set spoolfile = +INBOX
+set postponed = +Drafts
+set trash = +Trash
+set record = +Sent
+
+macro index o "<shell-escape>mw -y martin@martinvargas.org.pe<enter>" "run mbsync to sync martin@martinvargas.org.pe"
+macro index g "<enter-command>unset wait_key<enter><shell-escape>gpg --list-secret-keys; printf 'Enter email ID of user to publish: '; read eID; printf 'Enter fingerprint of GPG key to publish: '; read eFGPT; /usr/local/libexec/gpg-wks-client --create \$eFGPT \$eID | msmtp --read-envelope-from --read-recipients -a martin@martinvargas.org.pe<enter>"  "publish GPG key to WKS provider"
+macro index h "<pipe-message>/usr/local/libexec/gpg-wks-client --receive | msmtp --read-envelope-from --read-recipients -a martin@martinvargas.org.pe<enter>" "confirm GPG publication"
+
+mailboxes "=INBOX" "=Borrador" "=Enviado" "=Correo no deseado" "=Papelera" "=Notification"

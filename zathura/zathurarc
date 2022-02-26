@@ -1,0 +1,8 @@
+# Abrir los pdfs en color oscuro por defecto.
+set recolor
+# Definir el color de fondo de los pdfs
+set default-bg '#806040'
+# Definir el color de fondo del lector en modo oscuro
+set recolor-lightcolor '#232b2b'
+# Definir el color del texto resaltado
+set highlight-color '#66b2b2'

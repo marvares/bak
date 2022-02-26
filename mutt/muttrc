@@ -1,0 +1,13 @@
+# vim: filetype=neomuttrc
+source /usr/local/share/mutt-wizard/mutt-wizard.muttrc
+source /home/matti/.config/mutt/accounts/quecosaya@gmail.com.muttrc
+source /home/matti/.config/mutt/accounts/francisco.vargas@pucp.pe.muttrc
+source /home/matti/.config/mutt/accounts/martin@martinvargas.org.pe.muttrc
+source /home/matti/.config/mutt/accounts/martinontario@gmail.com.muttrc
+macro index,pager i1 '<sync-mailbox><enter-command>source /home/matti/.config/mutt/accounts/martinontario@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to martinontario@gmail.com"
+macro index,pager i2 '<sync-mailbox><enter-command>source /home/matti/.config/mutt/accounts/quecosaya@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to quecosaya@gmail.com"
+macro index,pager i3 '<sync-mailbox><enter-command>source /home/matti/.config/mutt/accounts/francisco.vargas@pucp.pe.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to francisco.vargas@pucp.pe"
+macro index,pager i4 '<sync-mailbox><enter-command>source /home/matti/.config/mutt/accounts/martin@martinvargas.org.pe.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to martin@martinvargas.org.pe"
+set date_format = "%d.%m.%Y %l:%M %p"
+macro compose \e5 "F pandoc -s -f markdown -t html \ny^T^Utext/html; charset=utf-8\n"
+set edit_headers 

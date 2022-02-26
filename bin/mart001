@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# echo "Actualización del Sistema"
+# sudo apt update -yy
+# sudo apt dist-upgrade -yy
+# sudo apt autoremove
+# sudo apt-get autoclean
+# clear
+# echo "Espacio Disponible"
+echo "RAM" 
+free -h
+echo "Espacio en Disco"
+df -h /dev/nvme0n1p4
+echo "
+  "
+# echo "Calendario"
+# "
+ncal -b -M 
+date "+%A, %d de %B del %Y"
+exit

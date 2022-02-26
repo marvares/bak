@@ -1,0 +1,22 @@
+# vim: filetype=neomuttrc
+# muttrc file for account martinontario@gmail.com
+set realname = "Martín Vargas Estrada"
+set from = "martinontario@gmail.com"
+set sendmail = "msmtp -a martinontario@gmail.com"
+alias me Martín Vargas Estrada <martinontario@gmail.com>
+set folder = "/home/matti/.local/share/mail/martinontario@gmail.com"
+set header_cache = /home/matti/.cache/mutt-wizard/martinontario@gmail.com/headers
+set message_cachedir = /home/matti/.cache/mutt-wizard/martinontario@gmail.com/bodies
+set mbox_type = Maildir
+set hostname = "gmail.com"
+source /usr/local/share/mutt-wizard/switch.muttrc
+set spoolfile = +INBOX
+set postponed = +Drafts
+set trash = +Trash
+set record = +Sent
+
+macro index o "<shell-escape>mw -y martinontario@gmail.com<enter>" "run mbsync to sync martinontario@gmail.com"
+macro index g "<enter-command>unset wait_key<enter><shell-escape>gpg --list-secret-keys; printf 'Enter email ID of user to publish: '; read eID; printf 'Enter fingerprint of GPG key to publish: '; read eFGPT; /usr/local/libexec/gpg-wks-client --create \$eFGPT \$eID | msmtp --read-envelope-from --read-recipients -a martinontario@gmail.com<enter>"  "publish GPG key to WKS provider"
+macro index h "<pipe-message>/usr/local/libexec/gpg-wks-client --receive | msmtp --read-envelope-from --read-recipients -a martinontario@gmail.com<enter>" "confirm GPG publication"
+
+mailboxes "=@SaneLater" "=A_Montario" "=Archive" "=Boxer/Done" "=Boxer/To-do" "=Correo electr&APM-nico no deseado" "=Deleted Messages" "=Drafts" "=INBOX" "=Job Postings" "=Later" "=Lecturas" "=Mailspring/Snoozed" "=Notes" "=Nuzzle" "=Personal" "=Programado" "=Read Later" "=Recibos" "=Sent Messages" "=Spotify" "=Trabajo" "=Trash" "=Viaje" "=[Airmail]/Done" "=[Airmail]/Memo" "=[Airmail]/Send Later" "=[Airmail]/Snooze" "=[Airmail]/To Do" "=[Gmail]/Borradores" "=[Gmail]/Destacados" "=[Gmail]/Enviados" "=[Gmail]/Importantes" "=[Gmail]/Papelera" "=[Gmail]/Spam" "=[Gmail]/Todos" "=[Gmail]/Trash" "=[Mailbox]/Later/Nuzzle" "=[Mailbox]/Later/Selekto" "=[Mailbox]/To Buy" "=[Mailbox]/To Read" "=[Mailbox]/To Watch" "=martinontario@gmail.com"

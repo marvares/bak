@@ -1,0 +1,11 @@
+# Configuración Personal de Youtube-dl
+
+# Save all videos under Videos directory in your home directory
+-o ~/Vídeos/YTDL/%(title)s.%(ext)s
+--write-description
+--merge-output-format mp4
+--write-auto-sub
+#--recode-video mp4
+#-o ~/Audios/YTDL/%(title)s.%(ext)s
+#--extract-audio 
+#--audio-format mp3  
