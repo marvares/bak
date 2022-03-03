@@ -1,0 +1,8 @@
+# Cómo solucionar el issue de la clave ssh para Github
+
+1. La clave ssh se crea para cada equipo desde el que vamos a acceder a GitHub
+1. Hay que abrir el Terminal e ir a ~/ssh
+1. Desde ese directorio generamos una clave ssh con modalidad rsa a 4096 (ver video)
+1. Luego hay que "avisarle" al agente ssh que tenemos esa nueva clave (ver video)
+1. Luego creamos la clave en GitHub
+1. Luego hacemos una prueba ç
