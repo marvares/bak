@@ -1,6 +1,5 @@
-set nocompatible
-filetype plugin on
-syntax on
+set nocompatible              " be iMproved, required
+filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 let g:clang_c_options = '-std=gnu11'
@@ -8,13 +7,12 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'reedes/vim-pencil'
 Plugin 'junegunn/goyo.vim'
 Plugin 'mzlogin/vim-markdown-toc'
-"Plugin 'vimwiki/vimwiki'
 Plugin 'dpelle/vim-LanguageTool' 
 Plugin 'ron89/thesaurus_query.vim' 
 Plugin 'junegunn/limelight.vim' 
 Plugin 'reedes/vim-wordy'
-Plugin 'alvan/vim-closetag'
 Plugin 'dbmrq/vim-ditto'
+"Plugin 'tpope/vim-markdown'
 Plugin 'morhetz/gruvbox'
 Plugin 'reedes/vim-colors-pencil'
 Plugin 'vim-airline/vim-airline'
@@ -36,6 +34,7 @@ let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
+
 " powerline symbols
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
@@ -56,24 +55,19 @@ let mapleader = ","
 set nocompatible
 
 " Enable type file detection. Vim will be able to try to detect the type of file in use.
-filetype on
+"filetype on
 
 " Enable plugins and load plugin for the detected file type.
-filetype plugin on
+"filetype plugin on
 
 " Load an indent file for the detected file type.
 "filetype indent on
 
 " Turn syntax highlighting on.
+syntax on
 
 " Add numbers to each line on the left-hand side.
 set number
-
-:augroup numbertoggle
-: autocmd!
-: autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() !="i" | set rnu   | endif
-: autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                 | set nornu | endif
-:augroup END
 
 " Highlight cursor line underneath the cursor horizontally.
 "set cursorline
@@ -116,7 +110,7 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 " Type jj to exit insert mode quickly.
 inoremap jj <Esc>
 
-"filetype off                  " required
+filetype off                  " required
 "set rtp+=~/.vim/bundle/Vundle.vim
 "call vundle#begin()
 "let g:clang_c_options = '-std=gnu11'
@@ -185,15 +179,4 @@ set noshowmode  " No mostrar el modo actual (ya lo muestra la barra de estado)
 autocmd FileType markdown set conceallevel=3
 set spelllang=es_es,en_us
 "set spell
-"set invlist 
-inoremap { {}<Esc>ha
-inoremap ( ()<Esc>ha
-inoremap [ []<Esc>ha
-inoremap " ""<Esc>ha
-inoremap ' ''<Esc>ha
-inoremap ` ``<Esc>ha
-
-
-
-
-" powerline symbols
+"set invlist
