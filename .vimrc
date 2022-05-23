@@ -8,7 +8,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'reedes/vim-pencil'
 Plugin 'junegunn/goyo.vim'
 Plugin 'mzlogin/vim-markdown-toc'
-"Plugin 'vimwiki/vimwiki'
+Plugin 'vimwiki/vimwiki'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
 Plugin 'dpelle/vim-LanguageTool' 
 Plugin 'ron89/thesaurus_query.vim' 
 Plugin 'junegunn/limelight.vim' 
@@ -19,7 +21,8 @@ Plugin 'morhetz/gruvbox'
 Plugin 'reedes/vim-colors-pencil'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'  " Temas para airline
-let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
+let g:vimwiki_list = [{'path': '~/Documentos/Nts/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+"let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
 let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved' " f/p/file-name.js
 "let g:airline_stl_path_style = 'short'
@@ -36,6 +39,8 @@ let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
+"Markdown to HTML
+nmap <leader>mh :%! /home/matti/bin/Markdown.pl --html4tags
 " powerline symbols
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
@@ -69,11 +74,12 @@ filetype plugin on
 " Add numbers to each line on the left-hand side.
 set number
 
-:augroup numbertoggle
-: autocmd!
-: autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() !="i" | set rnu   | endif
-: autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                 | set nornu | endif
-:augroup END
+" Código para autonumeración mixta.
+" :augroup numbertoggle
+" : autocmd!
+" : autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() !="i" | set rnu   | endif
+" : autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                 | set nornu | endif
+" :augroup END
 
 " Highlight cursor line underneath the cursor horizontally.
 "set cursorline
@@ -162,8 +168,13 @@ nnoremap <S-F2> :set nospell<CR>
 nnoremap <leader>s: ]s
 nnoremap <leader>a: [s
 
-vnoremap <C-c> "+y
-map <C-v> "+P
+
+nnoremap <C-y> "+y
+vnoremap <C-y> "+y
+nnoremap <C-p> "+gP
+vnoremap <C-p> "+gP
+
+"vnoremap <C-c> "*y :let @+=@*<CR>
 
 " Clear status line when vimrc is reloaded.
 "set statusline=no
@@ -193,7 +204,7 @@ inoremap " ""<Esc>ha
 inoremap ' ''<Esc>ha
 inoremap ` ``<Esc>ha
 
-
+nnoremap <C-f> :Rg! 
 
 
 " powerline symbols
