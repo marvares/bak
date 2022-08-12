@@ -1,0 +1,14 @@
+# File de aliases para matti
+
+alias octo="cd Documentos/R/sturdy-octo-journey/"
+alias nts="cd Documentos/Nts/"
+alias acad="cd Documentos/Acad/"
+alias rd="ranger ~/Documentos/"
+alias 3mes="ncal -M -b -3"
+alias rg="ranger"
+alias vc="cd && vim .vimrc"
+alias vy="cd ~/.config/youtube-dl/ && v config"
+alias chau="shutdown now"
+alias vba="cd && v .bash_aliases"
+alias vb="cd && v .bashrc"
+alias vf="cd Documentos/Nts/ && vim -c Rg! "
