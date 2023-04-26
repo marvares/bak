@@ -41,8 +41,25 @@ cp $f07 $d07
 # Hacer que el archivo en la ruta de destino sea ejecutable
 chmod +x $f01
     
-      
-    
+# Ahora los directorios
+# Carpetas origen y destino
+O1="/home/mart/bak/App/UD/xcondig/autokey"
+T1="/home/mart/.config/autokey"
+O2="/home/mart/bak/App/UD/xcondig/synth-shell"
+T2="/home/mart/.config/synth-shell"
+O3="/home/mart/bak/App/UD/xcondig/yt-dlp-config"
+T3="/home/mart/.config/yt-dlp-config"
+
+# Crear la carpeta de destino si no existe
+mkdir -p $T1
+mkdir -p $T2
+mkdir -p $T3
+
+# Copiar la carpeta origen a la carpeta destino
+cp -r $O1/* $T1/
+cp -r $O2/* $T2/
+cp -r $O3/* $T3/
+
 else
     echo "Bueno, parece que te arrepentiste, o ejecutaste esto por error, o ya estás viejo y no te acuerdas de la frase, jajaja."
 fi
