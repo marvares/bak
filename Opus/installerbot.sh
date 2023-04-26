@@ -49,6 +49,7 @@ if [ "$respuesta" == "ok Flaca" ]; then
     sudo apt install yt-dlp
     sudo apt install fonts-powerline
     sudo apt install ueberzug
+    sudo apt install neofetch
     
     # Configuramos git y clonamos Vundle
     git config --global user.email "francisco.vargas@pucp.pe"
