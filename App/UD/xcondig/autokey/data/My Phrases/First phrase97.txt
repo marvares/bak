@@ -1,0 +1,1 @@
+yt-dlp --config-location /home/mart/.config/yt-dlp-config/audio/yt-dlp.conf 
