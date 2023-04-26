@@ -30,7 +30,7 @@ if [ "$respuesta" == "ok Flaca" ]; then
     mkdir /home/mart/Documentos/Trabajo/Teleperformance/2023
     
     # Instalamos
-    sudo apt install git curl vim ranger synaptic keepassxc speedtest-cli ncal vim-gtk mpv vlc terminator clementine calibre yt-dlp
+    sudo apt install git curl vim ranger synaptic keepassxc speedtest-cli ncal vim-gtk mpv vlc terminator clementine calibre make yt-dlp
       
     
 else
