@@ -42,14 +42,17 @@ if [ "$respuesta" == "ok Flaca" ]; then
     sudo apt install vim-gtk3
     sudo apt install mpv 
     sudo apt install vlc 
-    sudo apt install terminator 
+    sudo apt install fzf 
     sudo apt install clementine 
     sudo apt install calibre 
     sudo apt install make 
-    sudo apt install yt-dlp
     sudo apt install fonts-powerline
     sudo apt install ueberzug
     sudo apt install neofetch
+    sudo add-apt-repository ppa:tomtomtom/yt-dlp    # Add ppa repo to apt
+    sudo apt update                                 # Update package list
+    sudo apt install yt-dlp                         # Install yt-dlp
+    sudo apt autoremove
     
     # Configuramos git y clonamos Vundle
     git config --global user.email "francisco.vargas@pucp.pe"
