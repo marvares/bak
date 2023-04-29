@@ -4,7 +4,7 @@
     "modes": [
         1
     ],
-    "usageCount": 4,
+    "usageCount": 5,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": true,
@@ -24,7 +24,7 @@
         "hotKey": null
     },
     "filter": {
-        "regex": null,
+        "regex": "terminal",
         "isRecursive": false
     },
     "sendMode": "kb"

@@ -48,12 +48,14 @@ if [ "$respuesta" == "ok Flaca" ]; then
     sudo apt install make 
     sudo apt install fonts-powerline
     sudo apt install audacity
+    sudo apt install texlive-latex-extra
     sudo apt install ueberzug
     sudo apt install neofetch
     sudo add-apt-repository ppa:tomtomtom/yt-dlp    # Add ppa repo to apt
     sudo apt update                                 # Update package list
     sudo apt install yt-dlp                         # Install yt-dlp
     sudo apt autoremove
+    timedatectl set-local-rtc 1 --adjust-system-clock #This allegedly corrects the clock mismatch between Linux and Windows if we're setting a dual boot
     
     # Configuramos git y clonamos Vundle
     git config --global user.email "francisco.vargas@pucp.pe"
