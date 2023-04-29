@@ -55,7 +55,6 @@ if [ "$respuesta" == "ok Flaca" ]; then
     sudo apt update                                 # Update package list
     sudo apt install yt-dlp                         # Install yt-dlp
     sudo apt autoremove
-    timedatectl set-local-rtc 1 --adjust-system-clock #This allegedly corrects the clock mismatch between Linux and Windows if we're setting a dual boot
     
     # Configuramos git y clonamos Vundle
     git config --global user.email "francisco.vargas@pucp.pe"
