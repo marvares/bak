@@ -47,6 +47,7 @@ if [ "$respuesta" == "ok Flaca" ]; then
     sudo apt install calibre 
     sudo apt install make 
     sudo apt install fonts-powerline
+    sudo apt install audacity
     sudo apt install ueberzug
     sudo apt install neofetch
     sudo add-apt-repository ppa:tomtomtom/yt-dlp    # Add ppa repo to apt
