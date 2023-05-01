@@ -55,7 +55,6 @@ if [ "$respuesta" == "ok Flaca" ]; then
     sudo apt update                                 # Update package list
     sudo apt install yt-dlp                         # Install yt-dlp
     sudo apt autoremove
-    timedatectl set-local-rtc 1 --adjust-system-clock #This allegedly corrects the clock mismatch between Linux and Windows if we're setting a dual boot
     
     # Configuramos git y clonamos Vundle
     git config --global user.email "francisco.vargas@pucp.pe"
@@ -63,6 +62,9 @@ if [ "$respuesta" == "ok Flaca" ]; then
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
     cd /home/mart/Documentos
     git clone git@github.com:marvares/Nts.git /home/mart/Documentos/Nts
+    git clone git@github.com:marvares/sturdy-octo-journey.git /home/mart/Documentos/R_Home
+    git clone git@github.com:marvares/acoso-IOP-PUCP.git /home/mart/Documentos/R_Home
+    git clone git@github.com:marvares/Congreso_2022.git /home/mart/Documentos/R_Home
     
 else
     echo "Bueno, parece que te arrepentiste, o ejecutaste esto por error, o ya estás viejo y no te acuerdas de la frase, jajaja."
