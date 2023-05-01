@@ -22,8 +22,8 @@ Plugin 'preservim/nerdtree'
 Plugin 'reedes/vim-colors-pencil'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'  " Temas para airline
-let g:vimwiki_list = [{'path': '~/Documentos/Nts/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
-"let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
+"let g:vimwiki_list = [{'path': '~/Documentos/Nts/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
 let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved' " f/p/file-name.js
 "let g:airline_stl_path_style = 'short'
@@ -183,7 +183,7 @@ vnoremap <C-y> "+y
 nnoremap <C-p> "+P
 vnoremap <C-p> "+P
 
-"vnoremap <C-c> "*y :let @+=@*<CR>
+"" vnoremap <C-c> "*y :let @+=@*<CR>
 
 " Clear status line when vimrc is reloaded.
 "set statusline=no
@@ -212,8 +212,8 @@ inoremap [ []<Esc>ha
 inoremap " ""<Esc>ha
 inoremap ¿ ¿?<Esc>ha
 inoremap ¡ ¡!<Esc>ha
-""inoremap ' ''<Esc>ha
-inoremap ` ``<Esc>ha
+"inoremap ' ''<Esc>ha
+"inoremap ` ``<Esc>ha
 
 nnoremap <C-f> :Rg! 
 "autocmd VimEnter * "$"
