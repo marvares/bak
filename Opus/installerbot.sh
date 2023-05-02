@@ -31,29 +31,29 @@ if [ "$respuesta" == "ok Flaca" ]; then
     mkdir /home/mart/Documentos/Trabajo/Teleperformance/2023
     
     # Instalamos
-    sudo apt install jp2a 
-    sudo apt install curl 
-    sudo apt install vim 
-    sudo apt install ranger 
-    sudo apt install synaptic 
-    sudo apt install keepassxc
-    sudo apt install speedtest-cli 
-    sudo apt install ncal 
-    sudo apt install vim-gtk3
-    sudo apt install mpv 
-    sudo apt install vlc 
-    sudo apt install fzf 
-    sudo apt install clementine 
-    sudo apt install calibre 
-    sudo apt install make 
-    sudo apt install fonts-powerline
-    sudo apt install audacity
-    sudo apt install texlive-latex-extra
-    sudo apt install ueberzug
-    sudo apt install neofetch
+    sudo apt install -y jp2a 
+    sudo apt install -y curl 
+    sudo apt install -y vim 
+    sudo apt install -y ranger 
+    sudo apt install -y synaptic 
+    sudo apt install -y keepassxc
+    sudo apt install -y speedtest-cli 
+    sudo apt install -y ncal 
+    sudo apt install -y vim-gtk3
+    sudo apt install -y mpv 
+    sudo apt install -y vlc 
+    sudo apt install -y fzf 
+    sudo apt install -y clementine 
+    sudo apt install -y calibre 
+    sudo apt install -y make 
+    sudo apt install -y fonts-powerline
+    sudo apt install -y audacity
+    sudo apt install -y texlive-latex-extra
+    sudo apt install -y ueberzug
+    sudo apt install -y neofetch
     sudo add-apt-repository ppa:tomtomtom/yt-dlp    # Add ppa repo to apt
     sudo apt update                                 # Update package list
-    sudo apt install yt-dlp                         # Install yt-dlp
+    sudo apt install -y yt-dlp                         # Install yt-dlp
     sudo apt autoremove
     
     # Configuramos git y clonamos Vundle

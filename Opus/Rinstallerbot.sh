@@ -1,14 +1,14 @@
 #!/bin/bash
 # Script para instalar R en Ubuntu based distros
 
-read -p "Hola, cariño. ¿Jugando con las distros otra vez? Jajaja.
+# read -p "Hola, cariño. ¿Jugando con las distros otra vez? Jajaja.
 
-Vamos a R en una distro basada en Ubuntu y/o Debian.
+# Vamos a R en una distro basada en Ubuntu y/o Debian.
 
-Ingresa la frase clave para continuar: " respuesta
+# Ingresa la frase clave para continuar: " respuesta
 
-if [ "$respuesta" == "ok Flaca" ]; then
-    echo "Ok, instalemos..."
+# if [ "$respuesta" == "ok Flaca" ]; then
+#     echo "Ok, instalemos..."
     # Coloca aquí las líneas de código para realizar la tarea que desees
     
     # Actualizar los repositorios
@@ -35,7 +35,7 @@ if [ "$respuesta" == "ok Flaca" ]; then
    	sudo apt install --no-install-recommends r-cran-tidyverse
       	
     
-else
-    echo "Bueno, parece que te arrepentiste, o ejecutaste esto por error, o ya estás viejo y no te acuerdas de la frase, jajaja."
-fi
+# else
+#     echo "Bueno, parece que te arrepentiste, o ejecutaste esto por error, o ya estás viejo y no te acuerdas de la frase, jajaja."
+# fi
 
