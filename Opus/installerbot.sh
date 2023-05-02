@@ -1,18 +1,18 @@
 #!/bin/bash
 # Script para instalar programas necesarios luego de instalar Ubuntu based distros
 
-read -p "Hola, cariño. ¿Jugando con las distros otra vez? Jajaja.
+# read -p "Hola, cariño. ¿Jugando con las distros otra vez? Jajaja.
 
-Vamos a crear algunos directorios e instalar algunos de nuestros programas de siempre, los que solemos usar en otras distros basadas en Ubuntu y/o Debian.
+# Vamos a crear algunos directorios e instalar algunos de nuestros programas de siempre, los que solemos usar en otras distros basadas en Ubuntu y/o Debian.
 
-Ten en cuenta que hay otros programas que tendrás que instalar vía Flatpak o similares, como Autokey, Joplin, Jamovi y otros.
+# Ten en cuenta que hay otros programas que tendrás que instalar vía Flatpak o similares, como Autokey, Joplin, Jamovi y otros.
 
-Y que tenemos una serie de scripts especiales aparte para instalar R y RStudio.
+# Y que tenemos una serie de scripts especiales aparte para instalar R y RStudio.
 
-Ingresa la frase clave para continuar: " respuesta
+# Ingresa la frase clave para continuar: " respuesta
 
-if [ "$respuesta" == "ok Flaca" ]; then
-    echo "Ok, instalemos..."
+# if [ "$respuesta" == "ok Flaca" ]; then
+    # echo "Ok, instalemos..."
     # Coloca aquí las líneas de código para realizar la tarea que desees
     
     # Actualizar los repositorios
@@ -66,7 +66,7 @@ if [ "$respuesta" == "ok Flaca" ]; then
     git clone git@github.com:marvares/acoso-IOP-PUCP.git /home/mart/Documentos/R_Home/acoso-IOP-PUCP
     git clone git@github.com:marvares/Congreso_2022.git /home/mart/Documentos/R_Home/Congreso_2022
     
-else
-    echo "Bueno, parece que te arrepentiste, o ejecutaste esto por error, o ya estás viejo y no te acuerdas de la frase, jajaja."
-fi
+# else
+   #  echo "Bueno, parece que te arrepentiste, o ejecutaste esto por error, o ya estás viejo y no te acuerdas de la frase, jajaja."
+# fi
 

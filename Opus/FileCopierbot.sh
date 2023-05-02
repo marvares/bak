@@ -1,16 +1,16 @@
 #!/bin/bash
 # Script para copiar archivos necesarios luego de instalar Ubuntu based distros
 
-read -p "Hola, cariño. ¿Jugando con las distros otra vez? Jajaja.
+# read -p "Hola, cariño. ¿Jugando con las distros otra vez? Jajaja.
 
-Vamos a copiar algunos archivos que siempre usamos.
+# Vamos a copiar algunos archivos que siempre usamos.
 
-Ten en cuenta que se supone que ya creaste las credenciales de Github y ya clonaste el directorio bak.
+# Ten en cuenta que se supone que ya creaste las credenciales de Github y ya clonaste el directorio bak.
 
-Ingresa la frase clave para continuar: " respuesta
+# Ingresa la frase clave para continuar: " respuesta
 
-if [ "$respuesta" == "ok Flaca" ]; then
-    echo "Ok, copiemos..."
+# if [ "$respuesta" == "ok Flaca" ]; then
+    # echo "Ok, copiemos..."
    
     # Copiemos algunos archivos que siempre usamos
     # Ruta del archivo a copiar
@@ -60,6 +60,6 @@ cp -r $O1/* $T1/
 cp -r $O2/* $T2/
 cp -r $O3/* $T3/
 
-else
-    echo "Bueno, parece que te arrepentiste, o ejecutaste esto por error, o ya estás viejo y no te acuerdas de la frase, jajaja."
-fi
+# else
+    # echo "Bueno, parece que te arrepentiste, o ejecutaste esto por error, o ya estás viejo y no te acuerdas de la frase, jajaja."
+# fi
