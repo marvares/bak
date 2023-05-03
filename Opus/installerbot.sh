@@ -50,6 +50,8 @@
     sudo apt install -y audacity
     sudo apt install -y texlive-latex-extra
     sudo apt install -y ueberzug
+    sudo apt install -y autokey-qt 
+    sudo apt install -y rstudio
     sudo apt install -y neofetch
     sudo add-apt-repository ppa:tomtomtom/yt-dlp    # Add ppa repo to apt
     sudo apt update                                 # Update package list
