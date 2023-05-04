@@ -55,7 +55,8 @@
     sudo apt install -y neofetch
     sudo add-apt-repository ppa:tomtomtom/yt-dlp    # Add ppa repo to apt
     sudo apt update                                 # Update package list
-    sudo apt install -y yt-dlp                         # Install yt-dlp
+    sudo apt install -y yt-dlp                      # Install yt-dlp
+    sudo dpkg -i /home/mart/bak/App/UD/ueberzug_18.1.9-2_amd64.deb
     sudo apt autoremove
     
     # Configuramos git y clonamos Vundle
