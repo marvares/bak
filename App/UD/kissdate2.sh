@@ -17,5 +17,5 @@ Recuerda: tú eres mi orgasmero ;-)"
 fi
 
 # Ejecutar el comando correspondiente
-jp2a --width=48 /home/mart/.config/poster.jpg
+jp2a --colors /home/mart/.config/poster.jpg
 echo $message
