@@ -121,10 +121,10 @@ fi
 if [ -f /home/mart/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
 	source /home/mart/.config/synth-shell/synth-shell-prompt.sh
 fi
-#Defino un atajo (alias) para que vim siempre empiece en modo edición:
-alias ve="vim -c 'startinsert'"
-alias v="vim -c '$'"
-alias vim="vim -c '$'"
+#Defino un atajo (alias) para que nvim siempre empiece en modo edición:
+alias ve="nvim -c 'startinsert'"
+alias v="nvim -c '$'"
+alias nvim="nvim -c '$'"
 # Defino un atajo (alias) para que la palabra "mes" ejecute mi calendsario favorito
 alias mes="ncal -b -M"
 # Defino un atajo (alias) para que la palabra "busca" ejecute este comando:
