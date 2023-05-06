@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "Actualización del Sistema"
+sudo apt update -yy
+sudo apt dist-upgrade -yy
+sudo apt autoremove
+sudo apt-get autoclean
+clear
+
+echo "¡Bubbies Actualizada!"
+
