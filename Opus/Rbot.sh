@@ -10,7 +10,7 @@
 # if [ "$respuesta" == "ok Flaca" ]; then
 #     echo "Ok, instalemos..."
     # Coloca aquí las líneas de código para realizar la tarea que desees
-    sudo apt install gfortran ;
+    sudo apt install -y gfortran ;
     sudo apt-get install liblapack-dev -y ; sudo apt-get install liblapack3 -y ; sudo apt-get install libopenblas-base -y ; sudo apt-get install libopenblas-dev -y ;
     sudo apt-get install libfontconfig1-dev -y ;
     sudo apt-get install libxml2-dev -y ;
