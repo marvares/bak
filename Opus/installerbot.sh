@@ -20,6 +20,7 @@
 
     # Creamos algunos directorios que siempre usamos
     mkdir /home/mart/bin
+    mkdir /home/mart/.config/nvim
     mkdir /home/mart/Documentos/R_Home
     mkdir /home/mart/Documentos/Cahier
     mkdir /home/mart/Documentos/Cahier/Utilitarios
