@@ -35,11 +35,10 @@
     sudo apt install -y jp2a 
     sudo apt install -y curl 
     sudo apt install -y ranger 
-    sudo apt install -y vim
     sudo apt install -y synaptic 
     sudo apt install -y keepassxc
     sudo apt install -y speedtest-cli 
-    sudo apt-get install gnome-tweaks
+    sudo apt-get install -y gnome-tweaks
     sudo apt install -y ncal 
     sudo apt install -y vim-gtk3
     sudo apt install -y mpv 
@@ -51,14 +50,13 @@
     sudo apt install -y fonts-powerline
     sudo apt install -y audacity
     sudo apt install -y texlive-latex-extra
-    sudo apt install -y ueberzug
     sudo apt install -y autokey-qt 
     sudo apt install -y neofetch
     sudo add-apt-repository ppa:tomtomtom/yt-dlp    # Add ppa repo to apt
     sudo apt update                                 # Update package list
     sudo apt install -y yt-dlp                      # Install yt-dlp
     sudo dpkg -i /home/mart/bak/App/UD/ueberzug_18.1.9-2_amd64.deb
-    sudo apt install -y nvim
+    sudo apt install -y neovim
     sudo apt install -y os-prober
     sudo apt install -y flatpak
     flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
