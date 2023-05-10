@@ -46,6 +46,8 @@
     sudo apt install -y fzf 
     sudo apt install -y clementine 
     sudo apt install -y calibre 
+    sudo apt-get install -y tesseract-ocr
+    sudo apt-get install -y gimagereader
     sudo apt install -y make 
     sudo apt install -y fonts-powerline
     sudo apt install -y audacity
