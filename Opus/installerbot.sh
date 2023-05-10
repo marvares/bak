@@ -55,19 +55,21 @@
     sudo add-apt-repository ppa:tomtomtom/yt-dlp    # Add ppa repo to apt
     sudo apt update                                 # Update package list
     sudo apt install -y yt-dlp                      # Install yt-dlp
-    sudo dpkg -i /home/mart/bak/App/UD/ueberzug_18.1.9-2_amd64.deb
+    #sudo dpkg -i /home/mart/bak/App/UD/ueberzug_18.1.9-2_amd64.deb
     sudo apt install -y neovim
     sudo apt install -y os-prober
-    sudo apt install -y flatpak
-    flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    flatpak install flathub org.jamovi.jamovi
-    flatpak install -y flathub com.mattjakeman.ExtensionManager
-    sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-    echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+    # sudo apt install -y flatpak
+    # flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    # flatpak install flathub org.jamovi.jamovi
+    # flatpak install -y flathub com.mattjakeman.ExtensionManager
+    # sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+    # echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
     sudo apt update
-    sudo apt install -y brave-browser
-    wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
+    # sudo apt install -y brave-browser
+    # wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
     sudo apt autoremove
+    timedatectl set-local-rtc 1 # Este comando debería solucionar el mismatch de relojes
+    en un dual boot con Windows
     
     # Configuramos git y clonamos Vundle
     git config --global user.email "francisco.vargas@pucp.pe"
