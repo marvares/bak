@@ -26,6 +26,7 @@
     f10=/home/mart/bak/App/UD/xcondig/poster_e2.jpg
     f11=/home/mart/bak/App/UD/xcondig/poster_x.jpg
     f12=/home/mart/bak/App/UD/xcondig/poster_xxx.jpg
+    f13=/home/mart/bak/App/UD/urls
 # Ruta de destino donde se copiará el archivo
     d01=/home/mart/kissdate2.sh
     d02=/home/mart/.bash_aliases
@@ -39,6 +40,7 @@
     d10=/home/mart/.config/poster_e2.jpg
     d11=/home/mart/.config/poster_x.jpg
     d12=/home/mart/.config/poster.jpg
+    d13=/home/mart/.newsboat/urls
 
 # Copiar el archivo a la ruta de destino
 cp $f01 $d01
@@ -53,6 +55,7 @@ cp $f09 $d09
 cp $f10 $d10
 cp $f11 $d11
 cp $f12 $d12
+cp $f13 $d13
 # Hacer que el archivo en la ruta de destino sea ejecutable
 chmod +x $f01
     
