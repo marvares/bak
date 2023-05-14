@@ -1,48 +1,84 @@
-set nocompatible
-filetype plugin on
-syntax on
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-let g:clang_c_options = '-std=gnu11'
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'reedes/vim-pencil'
-Plugin 'junegunn/goyo.vim'
-Plugin 'mzlogin/vim-markdown-toc'
-Plugin 'tpope/vim-eunuch'
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plugin 'junegunn/fzf.vim'
-Plugin 'dpelle/vim-LanguageTool' 
-Plugin 'ron89/thesaurus_query.vim' 
-Plugin 'junegunn/limelight.vim' 
-Plugin 'reedes/vim-wordy'
-Plugin 'alvan/vim-closetag'
-Plugin 'dbmrq/vim-ditto'
-Plugin 'morhetz/gruvbox'
-Plugin 'preservim/nerdtree'
-Plugin 'reedes/vim-colors-pencil'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'  " Temas para airline
-"let g:vimwiki_list = [{'path': '~/Documentos/Nts/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
-let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
-let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved' " f/p/file-name.js
-"let g:airline_stl_path_style = 'short'
-let g:airline_section_c = '%F'
-let g:airline_theme='molokai'
-"let g:airline_section_z = ' '
+" COMANDOS BÁSICOS PARA EDICIÓN 
+:set number
+:set relativenumber
+:set autoindent
+:set tabstop=4
+:set shiftwidth=4
+:set smarttab
+:set softtabstop=4
+:set mouse=a
+inoremap { {}<Esc>ha
+inoremap ( ()<Esc>ha
+inoremap [ []<Esc>ha
+inoremap ¿ ¿?<Esc>ha
+inoremap ¡ ¡!<Esc>ha
+" Type jj to exit insert mode quickly.
+inoremap jj <Esc>
+set textwidth=150        " Line wrap (number of cols)
+
+" PARA HACER COPY/PASTE FUERA DE NEOVIM
+
+nnoremap <C-y> "+y
+vnoremap <C-y> "+y
+nnoremap <C-p> "+P
+vnoremap <C-p> "+P
+
+" PARA HACER SPELLING
+
+let mapleader = ","
+nnoremap <F1> :set spell spelllang=es_es,en_us<CR>
+nnoremap <F2> :set nospell<CR>
+nnoremap <leader>s: ]s
+nnoremap <leader>a: [s
+" highlight SpellBad cterm=underline ctermfg=Black
+
+
+" PLUGINS (USANDO VIM-PLUG, HTTPS://GITHUB.COM/JUNEGUNN/VIM-PLUG)
+
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
+
+" Make sure you use single quotes
+
+Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
+Plug 'https://github.com/preservim/nerdtree' " NerdTree
+Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
+Plug 'https://github.com/vim-airline/vim-airline' " Status bar
+Plug 'MattesGroeger/vim-bookmarks' "Bookmarks persistentes y vistosos
+Plug 'tpope/vim-eunuch' "Comandos de renombrar y otros similares más amigables y potentes
+Plug 'vim-airline/vim-airline-themes'  " Temas para airline
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'dkarter/bullets.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+call plug#end()
+
+" SETEOS PARA AIRLINE
+
+let g:airline_theme='molokai' "Tema celeste y azul para airline
 let g:airline_section_y = ''
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
 " display spelling language when spell detection is enabled (if enough space is available) >
 let g:airline_detect_spelllang=1
-"let g:airline_solarized_bg='dark'
-" Cargar fuente Powerline y símbolos (ver nota)
-let g:airline#extensions#whitespace#enabled = 0
+set noshowmode  " No mostrar el modo actual (ya lo muestra la barra de estado)
+
+
+" Símbolos para air-line
 let g:airline_powerline_fonts = 1
+
 if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
+    let g:airline_symbols = {}
 endif
-"Markdown to HTML
-nmap <leader>mh :%! /home/matti/bin/Markdown.pl --html4tags
-" powerline symbols
+
+" airline symbols
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
@@ -52,176 +88,27 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = '☰' 
 let g:airline_symbols.dirty= '⚡'
-call vundle#end() " required
-filetype plugin indent on " required
 
-let mapleader = ","
+" SETEOS PARA GOYO Y LIMELIGHT
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+nnoremap <leader><F1> :Goyo 120<CR>:Limelight<CR>
+nnoremap <leader><F2> :Goyo!<CR>:Limelight!!<CR>
+
+
+" ENTRAR A MODO NORMAL TRAS 'N' SEGUNDOS DE INACTIVIDAD
 
 " automatically leave insert mode after 'updatetime' milliseconds of inaction
 au CursorHoldI * stopinsert
-" set 'updatetime' to 15 seconds when in insert mode
-au InsertEnter * let updaterestore=&updatetime | set updatetime=10000
+" set 'updatetime' to 05 seconds when in insert mode
+au InsertEnter * let updaterestore=&updatetime | set updatetime=5000
 au InsertLeave * let &updatetime=updaterestore
 
-" Disable compatibility with vi which can cause unexpected issues.
-set nocompatible
+" ATAJOS PARA NERDTREE
+nnoremap <C-f> :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
 
-" Enable type file detection. Vim will be able to try to detect the type of file in use.
-filetype on
-
-" Enable plugins and load plugin for the detected file type.
-filetype plugin on
-
-" Load an indent file for the detected file type.
-"filetype indent on
-
-" Turn syntax highlighting on.
-
-" Add numbers to each line on the left-hand side.
-set number
-
-" Código para autonumeración mixta.
-" :augroup numbertoggle
-" : autocmd!
-" : autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() !="i" | set rnu   | endif
-" : autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                 | set nornu | endif
-" :augroup END
-
-" Highlight cursor line underneath the cursor horizontally.
-"set cursorline
-
-" Highlight cursor line underneath the cursor vertically.
-" set cursorcolumn
-
-" Do not save backup files.
-"set nobackup
-set rnu 
-
-" While searching though a file incrementally highlight matching characters as you type.
-set incsearch
-
-" Ignore capital letters during search.
-set ignorecase
-
-" Override the ignorecase option if searching for capital letters.
-" This will allow you to search specifically for capital letters.
-set smartcase
-
-" Show matching words during a search.
-set showmatch
-
-" Use highlighting when doing a search.
-set hlsearch
-let g:limelight_conceal_ctermfg = '#000000'
-let g:limelight_conceal_guifg = '#6BC8E6'
-" Set the commands to save in history default number is 20.
-set history=1000
-
-" Enable auto completion menu after pressing TAB.
-set wildmenu
-
-" Make wildmenu behave like similar to Bash completion.
-set wildmode=list:longest
-
-" There are certain files that we would never want to edit with Vim.
-" Wildmenu will ignore files with these extensions.
-set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
-
-" Type jj to exit insert mode quickly.
-inoremap jj <Esc>
-
-"filetype off                  " required
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
-"let g:clang_c_options = '-std=gnu11'
-"Plugin 'VundleVim/Vundle.vim'
-"Plugin 'reedes/vim-pencil'
-"Plugin 'junegunn/goyo.vim'
-"Plugin 'mzlogin/vim-markdown-toc'
-"Plugin 'dpelle/vim-LanguageTool'
-"Plugin 'ron89/thesaurus_query.vim'
-"Plugin 'junegunn/limelight.vim'
-"Plugin 'reedes/vim-wordy'
-
-"call vundle#end() " required
-filetype plugin indent on " required
-
-" set number
-" set nowrap
-set smartcase
-set autoindent
-
-set linebreak   " Break lines at word (requires Wrap lines)
-" set showbreak=+++     " Wrap-broken line prefix
-set textwidth=90        " Line wrap (number of cols)
-set autoindent   " Auto-indent new lines
-set shiftwidth=4        " Number of auto-indent spaces
-set smartindent " Enable smart-indent
-set smarttab    " Enable smart-tabs
-set softtabstop=4       " Number of spaces per Tab
-" set ruler   " Show row and column ruler information
-set undolevels=1000             " Number of undo levels
-" set backspace=indent,eol,start  " Backspace behaviour
-"set showmode
-set mouse=a
-set noswapfile
-set undofile
-set undodir=~/.vim/undodir
-set history=10000
-set wrap
-nnoremap <F1> :set linebreak<CR>
-nnoremap <C-F1> :set nolinebreak<CR>
-nnoremap <F2> :set spell spelllang=es_es,en_us<CR>
-nnoremap <S-F2> :set nospell<CR>
-nnoremap <leader>s: ]s
-nnoremap <leader>a: [s
-nnoremap <C-g> :Goyo 120 
-nnoremap <C-l> :Limelight0.8 
-
-nnoremap <C-y> "+y
-vnoremap <C-y> "+y
-nnoremap <C-p> "+P
-vnoremap <C-p> "+P
-
-"" vnoremap <C-c> "*y :let @+=@*<CR>
-
-" Clear status line when vimrc is reloaded.
-"set statusline=no
-
-" Status line left side.
-"set statusline+=\ %F\ %M\ %Y\ %R
-" Use a divider to separate the left side from the right side.
-"set statusline+=%=
-
-" Status line right side.
-"set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
-
-" Show the status on the second to last line.
-"set laststatus=2
-"
-
-set noshowmode  " No mostrar el modo actual (ya lo muestra la barra de estado)
-
+" Para que nvim no muestre los asteriscos de formato en un file md
 autocmd FileType markdown set conceallevel=3
-set spelllang=es_es,en_us
-"set spell
-"set invlist 
-inoremap { {}<Esc>ha
-inoremap ( ()<Esc>ha
-inoremap [ []<Esc>ha
-inoremap " ""<Esc>ha
-inoremap ¿ ¿?<Esc>ha
-inoremap ¡ ¡!<Esc>ha
-"inoremap ' ''<Esc>ha
-"inoremap ` ``<Esc>ha
-
-nnoremap <C-f> :Rg! 
-"autocmd VimEnter * "$"
-" restore cursor position
-augroup restore_pos | au!
-    au BufWinEnter *
-                \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-                \ |   exe 'normal! g`"zz'
-                \ | endif
-augroup end
-" powerline symbols

@@ -34,6 +34,7 @@
     # Instalamos
     sudo apt install -y jp2a 
     sudo apt install -y curl 
+	sudo apt install -y perl
     sudo apt install -y ranger 
     sudo apt install -y synaptic 
     sudo apt install -y keepassxc
@@ -45,7 +46,7 @@
     sudo apt install -y vlc 
     sudo apt install -y fzf 
     sudo apt install -y clementine 
-    sudo apt install -y calibre 
+    # sudo apt install -y calibre 
     sudo apt-get install -y tesseract-ocr
     sudo apt-get install -y gimagereader
     sudo apt install -y make 
@@ -60,6 +61,9 @@
     #sudo dpkg -i /home/mart/bak/App/UD/ueberzug_18.1.9-2_amd64.deb
     sudo apt install -y neovim
     sudo apt install -y os-prober
+    # Para instalar dependencias para el fzf plugin de vim:
+	sudo apt-get install -y ripgrep	
+	sudo apt-get install -y silversearcher-ag
     # sudo apt install -y flatpak
     # flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     # flatpak install flathub org.jamovi.jamovi
@@ -76,7 +80,10 @@
     # Configuramos git y clonamos Vundle
     git config --global user.email "francisco.vargas@pucp.pe"
     git config --global user.name "Martín Vargas"
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+    # git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+	# Para instalar el instalador de plugins "Plug"  para Neovim
+	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
     cd /home/mart/Documentos
     git clone git@github.com:marvares/Nts.git /home/mart/Documentos/Nts
     git clone git@github.com:marvares/sturdy-octo-journey.git /home/mart/Documentos/R_Home/sturdy-octo-journey
