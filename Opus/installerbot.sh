@@ -79,7 +79,7 @@
     timedatectl set-local-rtc 1 # Este comando debería solucionar el mismatch de relojes
     en un dual boot con Windows
     
-    # Configuramos git y clonamos Vundle
+    # Configuramos git 
     git config --global user.email "francisco.vargas@pucp.pe"
     git config --global user.name "Martín Vargas"
     # git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 

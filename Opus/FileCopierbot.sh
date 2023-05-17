@@ -26,7 +26,10 @@
     f10=/home/mart/bak/App/UD/xcondig/poster_e2.jpg
     f11=/home/mart/bak/App/UD/xcondig/poster_x.jpg
     f12=/home/mart/bak/App/UD/xcondig/poster_xxx.jpg
-    f13=/home/mart/bak/App/UD/urls
+    f13=/home/mart/bak/App/UD/nb/urls
+    f14=/home/mart/bak/App/UD/nb/config
+    f15=/home/mart/bak/App/UD/nb/bookmarks.md
+    f16=/home/mart/bak/App/UD/nb/marcadores.sh
 # Ruta de destino donde se copiará el archivo
     d01=/home/mart/kissdate2.sh
     d02=/home/mart/.bash_aliases
@@ -41,6 +44,9 @@
     d11=/home/mart/.config/poster_x.jpg
     d12=/home/mart/.config/poster.jpg
     d13=/home/mart/.newsboat/urls
+    d14=/home/mart/.newsboat/config
+    d15=/home/mart/.newsboat/bookmarks
+    d16=/home/mart/.newsboat/marcadores.sh
 
 # Copiar el archivo a la ruta de destino
 cp $f01 $d01
@@ -56,8 +62,12 @@ cp $f10 $d10
 cp $f11 $d11
 cp $f12 $d12
 cp $f13 $d13
+cp $f14 $d14
+cp $f15 $d15
+cp $f16 $d16
 # Hacer que el archivo en la ruta de destino sea ejecutable
 chmod +x $f01
+chmod +x $f16
     
 # Ahora los directorios
 # Carpetas origen y destino
