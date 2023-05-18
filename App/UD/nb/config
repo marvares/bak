@@ -14,7 +14,8 @@ show-read-feeds no
 feedlist-format " %4i %n [%T] › %t %> no leídos %U/%c en total "
 feedlist-title-format " Cariño, tienes %u feeds no leídos de %t en total. "
 datetime-format "%d %B"
-articlelist-format " %4i %n / %D / %t %> "
+# articlelist-format " %4i %n › %D› %t %> " Incluir el status de leído ("N")  
+articlelist-format " %4i %D› %t %> "
 articlelist-title-format " %T ~ %u ARTÍCULOS NO LEÍDOS DE %T EN TOTAL. ¡PROVECHO, CARIÑO!"
 
 # Definimos una "lista negra" de cosas que no nos interesan/no queremos ver/nos llegan
@@ -55,15 +56,30 @@ color listnormal_unread yellow default
 color listfocus blue default reverse bold
 color listfocus_unread blue default reverse bold
 
-# Anchura de texto
+# ANCHURA DE TEXTO
 text-width 90
 
-# Bookmarks
+# BOOKMARKS
 bookmark-cmd ~/.newsboat/marcadores.sh
 bookmark-interactive yes
 bookmark-autopilot no
 
-# Macro para ver los videos de YT de frente en mpv
+# KEY BINDINGS
 
-# macro 3 set browser "setsid --fork mpv --profile=360p %u > /dev/null 2>&1"; open-in-browser; set browser "xdg-open %u";
-# macro 7 set browser "setsid --fork mpv --profile=720p %u > /dev/null 2>&1"; open-in-browser; set browser "xdg-open %u";
+bind-key l open
+# bind-key s sort
+# bind-key S save
+bind-key g home
+bind-key G end
+bind-key h quit
+# bind-key U show-urls
+bind-key k up feedlist
+bind-key j down feedlist
+bind-key k up article
+bind-key j down article
+bind-key k prev articlelist
+bind-key j next articlelist
+bind-key K prev-feed articlelist
+bind-key ^J pagedown 
+bind-key ^K pageup
+bind-key J next-feed articlelist

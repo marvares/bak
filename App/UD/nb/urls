@@ -67,7 +67,7 @@ https://www.theguardian.com/international/rss news
 https://www.aljazeera.com/xml/rss/all.xml news
 https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/america/portada news
 https://feeds.elpais.com/mrss-s/list/ep/site/elpais.com/section/ciencia news
-https://www.elmundo.es/rss/googlenews/portada.xml news
+https://www.elmundo.es/rss/googlenews/portada.xml news ~El_Mundo_España
 https://www.the-tls.co.uk/feed/ news
 https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml news
 https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/politics/rss.xml news
