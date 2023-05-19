@@ -21,7 +21,7 @@
     # Creamos algunos directorios que siempre usamos
     mkdir /home/mart/bin
     mkdir /home/mart/.config/nvim
-	mkdir /home/mart/.newsboat
+    mkdir /home/mart/.newsboat
     mkdir /home/mart/Documentos/R_Home
     mkdir /home/mart/Documentos/Cahier
     mkdir /home/mart/Documentos/Cahier/Utilitarios
@@ -35,8 +35,9 @@
     # Instalamos
     sudo apt install -y jp2a 
     sudo apt install -y curl 
-	sudo apt install -y newsboat
-	sudo apt install -y perl
+    sudo apt install -y newsboat
+    sudo apt install -y perl
+    sudo apt install -y cmus
     sudo apt install -y ranger 
     sudo apt install -y synaptic 
     sudo apt install -y keepassxc
