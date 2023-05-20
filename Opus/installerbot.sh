@@ -36,6 +36,15 @@
     sudo apt install -y jp2a 
     sudo apt install -y curl 
     sudo apt install -y newsboat
+    sudo apt install -y neomutt
+    sudo apt install -y isync
+    sudo apt install -y msmtp
+    sudo apt install -y pass
+    sudo apt install -y lynx
+    sudo apt install -y notmuch
+    sudo apt install -y abook
+    sudo apt install -y urlview
+    sudo apt install -y mpop
     sudo apt install -y perl
     sudo apt install -y cmus
     sudo apt install -y ranger 
@@ -92,7 +101,11 @@
     git clone git@github.com:marvares/sturdy-octo-journey.git /home/mart/Documentos/R_Home/sturdy-octo-journey
     git clone git@github.com:marvares/acoso-IOP-PUCP.git /home/mart/Documentos/R_Home/acoso-IOP-PUCP
     git clone git@github.com:marvares/Congreso_2022.git /home/mart/Documentos/R_Home/Congreso_2022
-    
+   #Clonamos repo para instalar mutt-wizard
+	cd
+	git clone https://github.com/LukeSmithxyz/mutt-wizard
+	cd mutt-wizard
+	sudo make install
 # else
    #  echo "Bueno, parece que te arrepentiste, o ejecutaste esto por error, o ya estás viejo y no te acuerdas de la frase, jajaja."
 # fi
