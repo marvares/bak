@@ -71,7 +71,8 @@
     sudo apt update                                 # Update package list
     sudo apt install -y yt-dlp                      # Install yt-dlp
     #sudo dpkg -i /home/mart/bak/App/UD/ueberzug_18.1.9-2_amd64.deb
-    sudo apt install -y neovim
+    # sudo apt install -y neovim
+    sudo apt install -y vim
     sudo apt install -y os-prober
     # Para instalar dependencias para el fzf plugin de vim:
 	sudo apt-get install -y ripgrep	
@@ -94,8 +95,9 @@
     git config --global user.name "Martín Vargas"
     # git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
 	# Para instalar el instalador de plugins "Plug"  para Neovim
-	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+	#sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim''
+
     cd /home/mart/Documentos
     git clone git@github.com:marvares/Nts.git /home/mart/Documentos/Nts
     git clone git@github.com:marvares/sturdy-octo-journey.git /home/mart/Documentos/R_Home/sturdy-octo-journey
