@@ -5,7 +5,7 @@ read -p "Hola, Cariño. Vamos a instalar una nueva distro basada en Ubuntu.
 
 Este script va a ejecutar en orden los scripts siguientes:
 
-- Installer.sh: Instala programas y crea los directorios principales
+- installerbot.sh: Instala programas y crea los directorios principales
 - FileCopierbot.sh: Copia archivos a los directorios creados por el script anterior
 - rangerbot.sh: Copia la configuración personalizada de Ranger
 - Rinteger.sh: A su vez un script integrador que ejecuta otros dos: Rinstallerbot.sh (instala R) y Rbot.sh (instala complementos de R)

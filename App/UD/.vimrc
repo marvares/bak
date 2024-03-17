@@ -1,29 +1,19 @@
-set nocompatible
 filetype plugin on
 syntax on
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 let g:clang_c_options = '-std=gnu11'
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'reedes/vim-pencil'
 Plugin 'junegunn/goyo.vim'
-Plugin 'mzlogin/vim-markdown-toc'
-Plugin 'tpope/vim-eunuch'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plugin 'junegunn/fzf.vim'
-Plugin 'dpelle/vim-LanguageTool' 
-Plugin 'ron89/thesaurus_query.vim' 
-Plugin 'junegunn/limelight.vim' 
-Plugin 'reedes/vim-wordy'
-Plugin 'alvan/vim-closetag'
-Plugin 'dbmrq/vim-ditto'
-Plugin 'morhetz/gruvbox'
+Plugin 'PhilRunninger/nerdtree-visual-selection'
 Plugin 'preservim/nerdtree'
-Plugin 'reedes/vim-colors-pencil'
+Plugin 'tpope/vim-surround'
+Plugin 'junegunn/fzf.vim'
+Plugin 'junegunn/limelight.vim' 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'  " Temas para airline
-"let g:vimwiki_list = [{'path': '~/Documentos/Nts/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
-let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
+"let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
 let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved' " f/p/file-name.js
 "let g:airline_stl_path_style = 'short'
@@ -40,8 +30,6 @@ let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
-"Markdown to HTML
-nmap <leader>mh :%! /home/matti/bin/Markdown.pl --html4tags
 " powerline symbols
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
@@ -53,15 +41,10 @@ let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = '☰' 
 let g:airline_symbols.dirty= '⚡'
 call vundle#end() " required
-filetype plugin indent on " required
+""filetype plugin indent on " required
 
 let mapleader = ","
 
-" automatically leave insert mode after 'updatetime' milliseconds of inaction
-au CursorHoldI * stopinsert
-" set 'updatetime' to 15 seconds when in insert mode
-au InsertEnter * let updaterestore=&updatetime | set updatetime=10000
-au InsertLeave * let &updatetime=updaterestore
 
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
@@ -79,13 +62,7 @@ filetype plugin on
 
 " Add numbers to each line on the left-hand side.
 set number
-
-" Código para autonumeración mixta.
-" :augroup numbertoggle
-" : autocmd!
-" : autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() !="i" | set rnu   | endif
-" : autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                 | set nornu | endif
-" :augroup END
+set relativenumber
 
 " Highlight cursor line underneath the cursor horizontally.
 "set cursorline
@@ -95,7 +72,6 @@ set number
 
 " Do not save backup files.
 "set nobackup
-set rnu 
 
 " While searching though a file incrementally highlight matching characters as you type.
 set incsearch
@@ -112,8 +88,7 @@ set showmatch
 
 " Use highlighting when doing a search.
 set hlsearch
-let g:limelight_conceal_ctermfg = '#000000'
-let g:limelight_conceal_guifg = '#6BC8E6'
+
 " Set the commands to save in history default number is 20.
 set history=1000
 
@@ -129,19 +104,6 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
 " Type jj to exit insert mode quickly.
 inoremap jj <Esc>
-
-"filetype off                  " required
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
-"let g:clang_c_options = '-std=gnu11'
-"Plugin 'VundleVim/Vundle.vim'
-"Plugin 'reedes/vim-pencil'
-"Plugin 'junegunn/goyo.vim'
-"Plugin 'mzlogin/vim-markdown-toc'
-"Plugin 'dpelle/vim-LanguageTool'
-"Plugin 'ron89/thesaurus_query.vim'
-"Plugin 'junegunn/limelight.vim'
-"Plugin 'reedes/vim-wordy'
 
 "call vundle#end() " required
 filetype plugin indent on " required
@@ -169,59 +131,53 @@ set undofile
 set undodir=~/.vim/undodir
 set history=10000
 set wrap
-nnoremap <F1> :set linebreak<CR>
-nnoremap <C-F1> :set nolinebreak<CR>
-nnoremap <F2> :set spell spelllang=es_es,en_us<CR>
-nnoremap <S-F2> :set nospell<CR>
-nnoremap <leader>s: ]s
-nnoremap <leader>a: [s
-nnoremap <C-g> :Goyo 120 
-nnoremap <C-l> :Limelight0.8 
+""nnoremap <F1> :set linebreak<CR>
+""nnoremap <C-F1> :set nolinebreak<CR>
+nnoremap <F1> :set spell spelllang=es_es,en_us,fr<CR>
+nnoremap <F2> :set nospell<CR>
+nnoremap <F9> :noh<CR>
+nnoremap <leader>a ]s 
+nnoremap <leader>s [s 
+nnoremap <leader>c z= 
+nnoremap <leader>v zg  
+nnoremap <leader>f zw 
+nnoremap <leader>f zw 
+nnoremap <leader>r gqip
+
 
 nnoremap <C-y> "+y
 vnoremap <C-y> "+y
-nnoremap <C-p> "+P
-vnoremap <C-p> "+P
-
-"" vnoremap <C-c> "*y :let @+=@*<CR>
-
-" Clear status line when vimrc is reloaded.
-"set statusline=no
-
-" Status line left side.
-"set statusline+=\ %F\ %M\ %Y\ %R
-" Use a divider to separate the left side from the right side.
-"set statusline+=%=
-
-" Status line right side.
-"set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
-
-" Show the status on the second to last line.
-"set laststatus=2
-"
+nnoremap <C-p> "+gP
+vnoremap <C-p> "+gP
 
 set noshowmode  " No mostrar el modo actual (ya lo muestra la barra de estado)
 
 autocmd FileType markdown set conceallevel=3
-set spelllang=es_es,en_us
+set spelllang=es_es,en_us,fr
 "set spell
 "set invlist 
 inoremap { {}<Esc>ha
 inoremap ( ()<Esc>ha
 inoremap [ []<Esc>ha
-inoremap " ""<Esc>ha
-inoremap ¿ ¿?<Esc>ha
-inoremap ¡ ¡!<Esc>ha
-"inoremap ' ''<Esc>ha
-"inoremap ` ``<Esc>ha
+inoremap ` ``<Esc>ha
 
-nnoremap <C-f> :Rg! 
-"autocmd VimEnter * "$"
-" restore cursor position
-augroup restore_pos | au!
-    au BufWinEnter *
-                \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-                \ |   exe 'normal! g`"zz'
-                \ | endif
-augroup end
-" powerline symbols
+nnoremap <C-f> :Rg!
+" set 'updatetime' to 15 seconds when in insert mode
+au InsertEnter * let updaterestore=&updatetime | set updatetime=4000
+au InsertLeave * let &updatetime=updaterestore
+au CursorHoldI * stopinsert
+
+" Goyo settings
+let g:goyo_width  = "100"
+let g:goyo_height = "100%"
+let g:goyo_linenr = 0
+
+" Hacer que cada vez que se ejecute Goyo, se ejecute Limelight también
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+" let g:limelight_conceal_ctermfg
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+nnoremap <F4> :Goyo<CR>

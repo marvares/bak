@@ -1,3 +1,3 @@
-keyboard.send_keys("ve ~/Documentos/Nts/Useful/" )
+keyboard.send_keys("ve ~/Nextcloud/Notes/Useful/" )
 output = system.exec_command("date +%Y_%m_%d_%H_%M_%S.md")
 keyboard.send_keys(output)
