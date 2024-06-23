@@ -28,6 +28,8 @@
     sudo dnf install -y neovim
     sudo dnf install -y vim-X11
     sudo dnf install -y chafa 
+    sudo dnf install -y gnome-tweaks
+    sudo dnf install -y gnome-shell-extension-manager
     sudo dnf install -y curl 
     sudo dnf install -y newsboat
     sudo dnf install -y perl
