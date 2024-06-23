@@ -1,13 +1,18 @@
 {
-    "type": "folder",
-    "title": "My Phrases",
+    "type": "script",
+    "description": "Crear ruta file news",
+    "store": {},
     "modes": [
-        3
+        1
     ],
-    "usageCount": 0,
-    "showInTrayMenu": true,
+    "usageCount": 4,
+    "prompt": false,
+    "omitTrigger": false,
+    "showInTrayMenu": false,
     "abbreviation": {
-        "abbreviations": [],
+        "abbreviations": [
+            "xnews"
+        ],
         "backspace": true,
         "ignoreCase": false,
         "immediate": false,
@@ -15,10 +20,8 @@
         "wordChars": "[\\w]"
     },
     "hotkey": {
-        "modifiers": [
-            "<ctrl>"
-        ],
-        "hotKey": "<f7>"
+        "modifiers": [],
+        "hotKey": null
     },
     "filter": {
         "regex": null,
