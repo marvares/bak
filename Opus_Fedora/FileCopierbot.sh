@@ -14,18 +14,22 @@
    
     # Copiemos algunos archivos que siempre usamos
     # Ruta del archivo a copiar
-    f01=/home/mart/bak/App/Fedora/kissdate2.sh
-    f02=/home/mart/bak/App/Fedora/.bash_aliases
-    f03=/home/mart/bak/App/Fedora/.bashrc
-    f04=/home/mart/bak/App/Fedora/.vimrc
-    f05=/home/mart/bak/App/Fedora/Cahier/UbuntuKeys.kdbx
-    f06=/home/mart/bak/App/Fedora/xbin/inimart
-    f07=/home/mart/bak/App/Fedora/xcondig/poster.jpg
-    f08=/home/mart/bak/App/Fedora/xcondig/nvim/init.vim
-    f09=/home/mart/bak/App/Fedora/xcondig/poster_e1.jpg
-    f10=/home/mart/bak/App/Fedora/xcondig/poster_e2.jpg
-    f11=/home/mart/bak/App/Fedora/xcondig/poster_x.jpg
-    f12=/home/mart/bak/App/Fedora/xcondig/poster_xxx.jpg
+    f01=/home/mart/bak/Opus_Fedora/kissdate2.sh
+    f02=/home/mart/bak/App/UD/.bash_aliases
+    f03=/home/mart/bak/Opus_Fedora/.bashrc
+    f04=/home/mart/bak/App/UD/.vimrc
+    f05=/home/mart/bak/App/UD/Cahier/UbuntuKeys.kdbx
+    f06=/home/mart/bak/App/UD/xbin/inimart
+    f07=/home/mart/bak/App/UD/xcondig/poster.jpg
+    f08=/home/mart/bak/App/UD/xcondig/nvim/init.vim
+    f09=/home/mart/bak/App/UD/xcondig/poster_e1.jpg
+    f10=/home/mart/bak/App/UD/xcondig/poster_e2.jpg
+    f11=/home/mart/bak/App/UD/xcondig/poster_x.jpg
+    f12=/home/mart/bak/App/UD/xcondig/poster_xxx.jpg
+    f13=/home/mart/bak/App/UD/nb/urls
+    f14=/home/mart/bak/App/UD/nb/config
+    f15=/home/mart/bak/App/UD/nb/bookmarks.md
+    f16=/home/mart/bak/App/UD/nb/marcadores.sh
 # Ruta de destino donde se copiará el archivo
     d01=/home/mart/kissdate2.sh
     d02=/home/mart/.bash_aliases
@@ -33,12 +37,16 @@
     d04=/home/mart/.vimrc
     d05=/home/mart/Documentos/Cahier/Utilitarios/UbuntuKeys.kdbx
     d06=/home/mart/bin/inimart
-    d07=/home/mart/.config/poster.jpg
+    d07=/home/mart/.config/poster0.jpg
     d08=/home/mart/.config/nvim/init.vim
     d09=/home/mart/.config/poster_e1.jpg
     d10=/home/mart/.config/poster_e2.jpg
     d11=/home/mart/.config/poster_x.jpg
-    d12=/home/mart/.config/poster_xxx.jpg
+    d12=/home/mart/.config/poster.jpg
+    d13=/home/mart/.newsboat/urls
+    d14=/home/mart/.newsboat/config
+    d15=/home/mart/.newsboat/bookmarks
+    d16=/home/mart/.newsboat/marcadores.sh
 
 # Copiar el archivo a la ruta de destino
 cp $f01 $d01
@@ -53,16 +61,21 @@ cp $f09 $d09
 cp $f10 $d10
 cp $f11 $d11
 cp $f12 $d12
+cp $f13 $d13
+cp $f14 $d14
+cp $f15 $d15
+cp $f16 $d16
 # Hacer que el archivo en la ruta de destino sea ejecutable
 chmod +x $f01
+chmod +x $f16
     
 # Ahora los directorios
 # Carpetas origen y destino
-O1="/home/mart/bak/App/Fedora/xcondig/autokey"
+O1="/home/mart/bak/App/UD/xcondig/autokey"
 T1="/home/mart/.config/autokey"
-O2="/home/mart/bak/App/Fedora/xcondig/synth-shell"
+O2="/home/mart/bak/App/UD/xcondig/synth-shell"
 T2="/home/mart/.config/synth-shell"
-O3="/home/mart/bak/App/Fedora/xcondig/yt-dlp-config"
+O3="/home/mart/bak/App/UD/xcondig/yt-dlp-config"
 T3="/home/mart/.config/yt-dlp-config"
 
 # Crear la carpeta de destino si no existe

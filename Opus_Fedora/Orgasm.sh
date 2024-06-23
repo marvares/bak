@@ -1,21 +1,20 @@
 #!/bin/bash
-# Script para hacer la instalación completa de distro basada en Fedora
+# Script para hacer la instalación completa de distro basada en Ubuntu
 
-read -p "Hola, Cariño. Vamos a instalar una nueva distro basada en Fedora.
+read -p "Hola, Cariño. Vamos a instalar una nueva distro basada en Ubuntu.
 
 Este script va a ejecutar en orden los scripts siguientes:
 
-- Installer.sh: Instala programas y crea los directorios principales
+- installerbot.sh: Instala programas y crea los directorios principales
 - FileCopierbot.sh: Copia archivos a los directorios creados por el script anterior
-- rangerbot.sh: instala ranger (por ahora, trataremos de instalar ueberzug en modo manual) 
-- RInstallerFedora.sh: Instala R y algunos complementos
+- rangerbot.sh: Copia la configuración personalizada de Ranger
 
 Si está todo correcto, dame el ok, amor.
 
 Ingresa la frase clave para continuar: " respuesta
 
 if [ "$respuesta" == "ok Flaca" ]; then
-    echo "Ok, emepecemos..."
+    echo "Ok, empecemos..."
 # Ejecuta el primer script
 bash /home/mart/bak/Opus_Fedora/installerbot.sh
 

@@ -8,14 +8,14 @@ if [ $hora -ge 13 ] && [ $hora -lt 14 ]; then
   # Si es así, ejecutar el comando "x"
   message="¡Hola cariño! 
 Hoy es $(date '+%A, %d %B %Y y es la %I:%M %p'). 
-Recuerda: tú eres mi orgasmero ;-)"
+Recuerda: tú eres mi Bu ;-)"
 else
   # De lo contrario, ejecutar el comando "y"
   message="¡Hola cariño! 
 Hoy es $(date '+%A, %d %B %Y y son las %I:%M %p'). 
-Recuerda: tú eres mi orgasmero ;-)"
+Recuerda: tú eres mi Bu ;-)"
 fi
 
 # Ejecutar el comando correspondiente
-# chafa -c 240 /home/mart/.config/poster.jpg
+chafa /home/mart/.config/poster_e1.jpg
 echo $message
