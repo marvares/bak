@@ -16,9 +16,9 @@
     # Coloca aquí las líneas de código para realizar la tarea que desees
     
     # Actualizar los repositorios
-    sudo dnf update -y
+    sudo dnf upgrade --refresh -y
     sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-    sudo dnf update -y
+    sudo dnf upgrade --refresh -y
     # Creamos algunos directorios que siempre usamos
     mkdir /home/mart/bin
     mkdir /home/mart/.newsboat
@@ -31,6 +31,7 @@
     sudo dnf install -y gnome-tweaks
     sudo dnf install -y gnome-shell-extension-manager
     sudo dnf install -y curl 
+    sudo dnf install -y bleachbit
     sudo dnf install -y newsboat
     sudo dnf install -y perl
     sudo dnf install -y cmus
@@ -38,6 +39,7 @@
     sudo dnf install -y keepassxc
     sudo dnf install -y speedtest-cli 
     sudo dnf install -y mpv 
+    sudo dnf install -y gparted
     sudo dnf install -y vlc 
     sudo dnf install -y fzf 
     sudo dnf install -y clementine 
@@ -46,15 +48,25 @@
     sudo dnf install -y make 
     sudo dnf install -y texlive-scheme-full
     sudo dnf install -y autokey-gtk
+    sudo dnf install -y pavucontrol
+    sudo dnf install -y timeshift
+    sudo dnf copr enable elxreno/preload -y && sudo dnf install preload -y
     sudo dnf install -y fastfetch
-    sudo dnf update                                 # Update package list
-    sudo dnf install -y yt-dlp                      # Install yt-dlp
+    # add the repo for LibreWolf
+   curl -fsSL https://rpm.librewolf.net/librewolf-repo.repo | pkexec tee /etc/yum.repos.d/librewolf.repo
+   # install the packages for LibreWolf
+   sudo dnf install -y librewolf
+   sudo dnf update                                 # Update package list
+   sudo dnf install -y yt-dlp                      # Install yt-dlp
 
     sudo dnf install -y os-prober
     # Para instalar dependencias para el fzf plugin de vim:
 	sudo dnf install -y ripgrep	
 	sudo dnf install -y silversearcher-ag
-
+# Optimización de dnf
+	echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf
+       echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf
+       sudo install -y dnfdragora
     sudo dnf update
     sudo dnf autoremove
     timedatectl set-local-rtc 1 # Este comando debería solucionar el mismatch de relojes

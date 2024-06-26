@@ -5,7 +5,7 @@
         1
     ],
     "usageCount": 0,
-    "prompt": true,
+    "prompt": false,
     "omitTrigger": false,
     "matchCase": true,
     "showInTrayMenu": false,
@@ -27,5 +27,5 @@
         "regex": null,
         "isRecursive": false
     },
-    "sendMode": "<ctrl>+v"
+    "sendMode": "kb"
 }

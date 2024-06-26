@@ -18,7 +18,7 @@
     f02=/home/mart/bak/App/UD/.bash_aliases
     f03=/home/mart/bak/Opus_Fedora/.bashrc
     f04=/home/mart/bak/App/UD/.vimrc
-    f05=/home/mart/bak/App/UD/Cahier/UbuntuKeys.kdbx
+    #f05=/home/mart/bak/App/UD/Cahier/UbuntuKeys.kdbx
     f06=/home/mart/bak/App/UD/xbin/inimart
     f07=/home/mart/bak/App/UD/xcondig/poster.jpg
     f08=/home/mart/bak/App/UD/xcondig/nvim/init.vim
@@ -35,7 +35,7 @@
     d02=/home/mart/.bash_aliases
     d03=/home/mart/.bashrc
     d04=/home/mart/.vimrc
-    d05=/home/mart/Documentos/Cahier/Utilitarios/UbuntuKeys.kdbx
+   # d05=/home/mart/Documentos/Cahier/Utilitarios/UbuntuKeys.kdbx
     d06=/home/mart/bin/inimart
     d07=/home/mart/.config/poster0.jpg
     d08=/home/mart/.config/nvim/init.vim
