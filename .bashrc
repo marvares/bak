@@ -11,7 +11,7 @@ esac
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
-HISTTIMEFORMAT="%Y-%m-%d %T "
+
 # append to the history file, don't overwrite it
 shopt -s histappend
 
@@ -105,15 +105,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-#Defino un atajo (alias) para que vim siempre empiece en modo edición:
-alias vim="vim -c 'startinsert'"
-# Defino un atajo (alias) para que la palabra "mes" ejecute mi calendsario favorito
-alias mes="ncal -b -M"
-# Defino un atajo (alias) para que la palabra "busca" ejecute este comando:
-alias buscaf="grep -iRl "
-alias buscac="grep -iR "
-alias veloweb="speedtest-cli"
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -124,9 +115,22 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
+~/kissdate2.sh
 ##-----------------------------------------------------
 ## synth-shell-prompt.sh
-if [ -f /home/matti/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
-	source /home/matti/.config/synth-shell/synth-shell-prompt.sh
+if [ -f /home/mart/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
+	source /home/mart/.config/synth-shell/synth-shell-prompt.sh
 fi
+#Defino un atajo (alias) para que nvim siempre empiece en modo edición:
+alias ve="vim -c 'startinsert'"
+alias v="vim -c '$'"
+alias nvim="nvim -c '$'"
+# Defino un atajo (alias) para que la palabra "mes" ejecute mi calendsario favorito
+alias mes="cal -m"
+# Defino un atajo (alias) para que la palabra "busca" ejecute este comando:
+alias buscaf="grep -iRl "
+alias buscac="grep -iR "
+alias veloweb="speedtest-cli"
+alias install="sudo dnf install -y"
+export EDITOR=vim
+alias remove="sudo dnf remove -y"
