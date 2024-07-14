@@ -59,7 +59,14 @@
     sudo apt update                                 # Update package list
     sudo apt install -y yt-dlp                      # Install yt-dlp
     sudo apt install -y vim
+    sudo app install -y neovim
     sudo apt install -y os-prober
+    sudo add-apt-repository ppa:costales/yaru-colors-folder-color
+    sudo apt update
+    sudo apt install -y folder-color yaru-colors-folder-color
+    sudo add-apt-repository ppa:appimagelauncher-team/stable
+    sudo apt update
+    sudo apt install appimagelauncher
     # Para instalar dependencias para el fzf plugin de vim:
 	sudo apt-get install -y ripgrep	
 	sudo apt-get install -y silversearcher-ag
@@ -87,6 +94,11 @@
     git clone git@github.com:marvares/acoso-IOP-PUCP.git /home/mart/Nextcloud/Dox/R_Home/acoso-IOP-PUCP
     git clone git@github.com:marvares/Congreso_2022.git /home/mart/Nextcloud/Dox/R_Home/Congreso_2022
 
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    bash <(curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh)
+    atuin register -u <USERNAME> -e <EMAIL>
+    atuin import auto
+    atuin sync
 
 # else
    #  echo "Bueno, parece que te arrepentiste, o ejecutaste esto por error, o ya estás viejo y no te acuerdas de la frase, jajaja."
