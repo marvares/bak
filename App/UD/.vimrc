@@ -9,6 +9,7 @@ Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'PhilRunninger/nerdtree-visual-selection'
 Plugin 'preservim/nerdtree'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
 Plugin 'junegunn/fzf.vim'
 Plugin 'junegunn/limelight.vim' 
 Plugin 'vim-airline/vim-airline'

@@ -79,11 +79,14 @@
     # Configuramos git 
     git config --global user.email "francisco.vargas@pucp.pe"
     git config --global user.name "Martín Vargas"
+    cd /home/mart/
+    git clone git@github.com:VundleVim/Vundle.vim.git
     cd /home/mart/Documentos
     git clone git@github.com:marvares/Nts.git /home/mart/Nextcloud/Dox/Nts
     git clone git@github.com:marvares/sturdy-octo-journey.git /home/mart/Nextcloud/Dox/R_Home/sturdy-octo-journey
     git clone git@github.com:marvares/acoso-IOP-PUCP.git /home/mart/Nextcloud/Dox/R_Home/acoso-IOP-PUCP
     git clone git@github.com:marvares/Congreso_2022.git /home/mart/Nextcloud/Dox/R_Home/Congreso_2022
+
 
 # else
    #  echo "Bueno, parece que te arrepentiste, o ejecutaste esto por error, o ya estás viejo y no te acuerdas de la frase, jajaja."
